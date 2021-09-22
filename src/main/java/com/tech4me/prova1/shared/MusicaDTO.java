@@ -1,8 +1,15 @@
 package com.tech4me.prova1.shared;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class MusicaDTO {
     
     private String id;
+    @NotBlank(message = "O título deve possuir caracteres não brancos")
+    @NotEmpty(message = "O título deve ser preenchido")
+    @Size(min = 3, message = "O título deve ter, ao menos, 3 caracteres")
     private String titulo;
     private String album;
     private String genero;
